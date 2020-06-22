@@ -16,6 +16,15 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+## Docker Build Desenvolvimento
+
+```bash
+sudo docker build -f Dockerfile -t portinari-ui-keycloak-login:dev . && \
+  sudo docker run -it --rm --name portinari-ui-keycloak-login-dev -p 4200:80 portinari-ui-keycloak-login:dev
+
+  sudo docker run -it --rm --name portinari-ui-keycloak-login-dev -p 4200:80 -v /mnt/c/Sources/Samples/Portinari-UI/portinari-ui-keycloak-login/dist/portinari-ui-keycloak-login:/app portinari-ui-keycloak-login:dev
+```
+
 ## Docker Build Produção
 
 ```bash
@@ -27,11 +36,11 @@ sudo docker rm portinari-ui-keycloak-login -f
 sudo docker run -d --name portinari-ui-keycloak-login --restart always -p 9001:80 portinari-ui-keycloak-login:latest
 
 ## Full
-cd cd sources/samples/portinari-ui-keycloak-login \
-  && git pull \
-  && sudo docker build -f Dockerfile -t portinari-ui-keycloak-login:latest . \
-  && sudo docker rm portinari-ui-keycloak-login -f \
-  && sudo docker run -d --name portinari-ui-keycloak-login --restart always -p 9001:80 portinari-ui-keycloak-login:latest
+cd cd sources/samples/portinari-ui-keycloak-login && \
+  git pull && \
+  sudo docker build -f Dockerfile -t portinari-ui-keycloak-login:latest . && \
+  sudo docker rm portinari-ui-keycloak-login -f && \
+  sudo docker run -d --name portinari-ui-keycloak-login --restart always -p 9001:80 portinari-ui-keycloak-login:latest
 ```
 
 ## Running unit tests

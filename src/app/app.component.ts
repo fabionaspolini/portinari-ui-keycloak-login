@@ -17,19 +17,19 @@ export class AppComponent implements OnInit {
     {
       label: 'Início',
       link: '/home',
-      icon: 'po-icon-home',
+      icon: 'po-icon po-icon-home',
       shortLabel: 'Início',
     },
     {
       label: 'Infomações do usuário',
       link: '/usuario',
-      icon: 'po-icon-users',
+      icon: 'po-icon po-icon-users',
       shortLabel: 'User Info',
     },
     {
       label: 'Sair',
       action: this.logout.bind(this),
-      icon: 'po-icon-exit',
+      icon: 'po-icon po-icon-exit',
       shortLabel: 'Sair',
     },
   ];
