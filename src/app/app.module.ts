@@ -22,7 +22,8 @@ export function configureAuth(oidcConfigService: OidcConfigService) {
     oidcConfigService.withConfig({
       // Keycloak Realm URL. Usado para obter configuração do serviço.
       // Library faz get em http://localhost:8080/auth/realms/master/.well-known/openid-configuration
-      stsServer: 'http://localhost:8080/auth/realms/master',
+      // stsServer: 'http://localhost:8080/auth/realms/master',
+      stsServer: 'http://172.16.1.35:8080/auth/realms/master',
       redirectUrl: window.location.origin,
       postLogoutRedirectUri: window.location.origin,
       clientId: 'portinari-ui-sample',
