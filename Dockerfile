@@ -45,7 +45,7 @@ COPY ./nginx.conf /etc/nginx/nginx.conf
 COPY ./gzip.conf /etc/nginx/gzip.conf
 
 # copy artifact build from the 'build environment'
-COPY --from=build /app/dist /app
+COPY --from=build /app/dist/portinari-ui-keycloak-login /app
 
 # expose port 80
 EXPOSE 80
