@@ -16,6 +16,24 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+## Docker Build Produção
+
+```bash
+# Build
+sudo docker build -f Dockerfile -t portinari-ui-keycloak-login:latest .
+
+# Executar
+sudo docker rm portinari-ui-keycloak-login -f
+sudo docker run -d --name portinari-ui-keycloak-login --restart always -p 9001:80 portinari-ui-keycloak-login:latest
+
+## Full
+cd cd sources/samples/portinari-ui-keycloak-login \
+  && git pull \
+  && sudo docker build -f Dockerfile -t portinari-ui-keycloak-login:latest . \
+  && sudo docker rm portinari-ui-keycloak-login -f \
+  && sudo docker run -d --name portinari-ui-keycloak-login --restart always -p 9001:80 portinari-ui-keycloak-login:latest
+```
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
