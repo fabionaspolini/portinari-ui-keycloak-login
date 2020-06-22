@@ -21,10 +21,10 @@ export class AppComponent implements OnInit {
       shortLabel: 'Início',
     },
     {
-      label: 'Cadastro de Usuários',
+      label: 'Infomações do usuário',
       link: '/usuario',
       icon: 'po-icon-users',
-      shortLabel: 'Usuários',
+      shortLabel: 'User Info',
     },
     {
       label: 'Sair',

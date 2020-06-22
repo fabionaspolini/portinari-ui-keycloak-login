@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PoModule } from '@po-ui/ng-components';
 import { RouterModule } from '@angular/router';
-import { CadUsuarioComponent } from './pages/usuarios/cad-usuario/cad-usuario.component';
+import { InfoUsuarioComponent } from './pages/usuarios/info/info-usuario.component';
 import { HomeComponent } from './pages/home/home.component';
 
 import { HttpClientModule } from '@angular/common/http'; // angular-auth-oidc-client import
@@ -31,11 +31,12 @@ export function configureAuth(oidcConfigService: OidcConfigService) {
       silentRenew: true,
       silentRenewUrl: `${window.location.origin}/silent-renew.html`,
       logLevel: LogLevel.Debug,
+      autoUserinfo: true,
     });
 }
 
 @NgModule({
-  declarations: [AppComponent, CadUsuarioComponent, HomeComponent],
+  declarations: [AppComponent, InfoUsuarioComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
