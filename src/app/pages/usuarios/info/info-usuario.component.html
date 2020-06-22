@@ -1,11 +1,11 @@
 <po-page-detail p-title="">
   <po-divider p-label="Dados do usuário"></po-divider>
   <po-dynamic-view
-    [p-value]="userData"
+    [p-value]="sessionInfo.getUserData()"
     [p-fields]="userDymanicViewFields"
     >
   </po-dynamic-view>
 
   <po-divider p-label="JWT Token"></po-divider>
-  <po-info [p-value]="token" p-label-size="1"></po-info>
+  <po-info [p-value]="sessionInfo.getToken()" p-label-size="1"></po-info>
 </po-page-detail>

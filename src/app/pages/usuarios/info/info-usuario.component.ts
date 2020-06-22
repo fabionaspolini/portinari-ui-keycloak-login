@@ -1,4 +1,4 @@
-import { OidcSecurityService } from 'angular-auth-oidc-client';
+import { SessionInfoService } from './../../../services/session-info.service';
 import { Component, OnInit } from '@angular/core';
 import { PoDynamicViewField } from '@po-ui/ng-components';
 
@@ -15,15 +15,9 @@ export class InfoUsuarioComponent implements OnInit {
     { property: 'name', label: 'Nome Completo' },
     { property: 'email', label: 'E-mail' },
   ];
-  userData: any;
-  token: string;
 
-  constructor(public oidcSecurityService: OidcSecurityService) {}
+  constructor(public sessionInfo: SessionInfoService) {}
 
   ngOnInit(): void {
-    this.token = this.oidcSecurityService.getToken();
-    this.oidcSecurityService.userData$.subscribe((userData) => {
-      this.userData = userData;
-    });
   }
 }
