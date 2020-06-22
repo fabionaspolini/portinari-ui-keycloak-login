@@ -36,7 +36,7 @@ sudo docker rm portinari-ui-keycloak-login -f
 sudo docker run -d --name portinari-ui-keycloak-login --restart always -p 9001:80 portinari-ui-keycloak-login:latest
 
 ## Full
-cd cd sources/samples/portinari-ui-keycloak-login && \
+cd ~/sources/samples/portinari-ui-keycloak-login && \
   git pull && \
   sudo docker build -f Dockerfile -t portinari-ui-keycloak-login:latest . && \
   sudo docker rm portinari-ui-keycloak-login -f && \
