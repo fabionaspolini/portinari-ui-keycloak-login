@@ -33,6 +33,7 @@ export class AppComponent implements OnInit {
       shortLabel: 'Sair',
     },
   ];
+  userData: any;
 
   constructor(public oidcSecurityService: OidcSecurityService) {}
 
@@ -41,10 +42,13 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.oidcSecurityService.checkAuth().subscribe((auth) => {
-      console.log('is authenticated', auth);
+    this.oidcSecurityService.checkAuth().subscribe(auth => {
       if (!auth) {
         this.login();
+      } else {
+        this.oidcSecurityService.userData$.subscribe(userData => {
+          this.userData = userData;
+        });
       }
     });
   }
