@@ -21,9 +21,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ```bash
 sudo docker build -f Dockerfile -t portinari-ui-keycloak-login:dev . && \
   sudo docker run -it --rm --name portinari-ui-keycloak-login-dev -p 4200:80 portinari-ui-keycloak-login:dev
-
-sudo docker build -f Dockerfile -t portinari-ui-keycloak-login:dev . && \
-  sudo docker run -it --rm --name portinari-ui-keycloak-login-dev -p 4200:80 portinari-ui-keycloak-login:dev
 ```
 
 ## Docker Build Produção
