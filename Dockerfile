@@ -42,7 +42,6 @@ FROM nginx:1.16.0-alpine
 
 # copy ngnix Angular server hosting
 COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY ./gzip.conf /etc/nginx/gzip.conf
 
 # copy artifact build from the 'build environment'
 COPY --from=build /app/dist/portinari-ui-keycloak-login /app
